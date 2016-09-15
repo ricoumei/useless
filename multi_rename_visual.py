@@ -1,6 +1,6 @@
 #coding:utf-8
 from tkinter import *
-from tkinter import filedialog
+from tkinter import filedialog, messagebox
 import os
 import re
 
@@ -27,7 +27,11 @@ class MR(object):
         path = self.path_entry.get()
         old = self.pattern_entry.get()
         new = self.target_entry.get()
-        self.rename(path, old, new, check=self.check_var.get() == 'y')
+        try:
+            self.rename(path, old, new, check=self.check_var.get() == 'y')
+            messagebox.showinfo(title='通知', message='修改成功!')
+        except:
+            messagebox.showwarning(title='通知', message='发生错误!')
 
     def select_path(self):
         path_dialog = filedialog.Directory(self.win)
@@ -57,7 +61,7 @@ class MR(object):
         self.target_entry = Entry(self.win)
         self.target_entry.grid(column=1, row=2, padx=5, pady=0)
 
-        self.btn = Button(self.win, text='修改', command=self.btn_onclick, width=10).grid(column=1, row=3, rowspan=2)
+        self.btn = Button(self.win, text='修改', command=self.btn_onclick, width=10).grid(column=1, row=3, pady=20)
         # self.btn.configure(width=30)
 
 
