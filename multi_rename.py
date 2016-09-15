@@ -1,6 +1,10 @@
 import os
 import re
 
+"""
+改名工具，只支持正则
+"""
+
 def rename(path, old, new):
     path.replace('\\', '/')
     filenames = os.listdir(path)

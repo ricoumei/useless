@@ -4,6 +4,10 @@ from tkinter import filedialog, messagebox
 import os
 import re
 
+"""
+图形化改名工具
+"""
+
 class MR(object):
     def __init__(self, title):
         self.win = Tk()
