@@ -31,12 +31,15 @@ class MR(object):
         old = self.pattern_entry.get()
         new = self.target_entry.get()
         try:
+            if path == '' or old == '' or new == '':
+                raise Exception('信息填写不完整!')
             self.rename(path, old, new, check=self.check_var.get() == 'y')
             messagebox.showinfo(title='通知', message='修改成功!')
-        except:
-            messagebox.showwarning(title='通知', message='发生错误!')
+        except Exception as e:
+            messagebox.showwarning(title='警告', message=e)
 
     def select_path(self):
+        self.path_entry.delete(0, END)
         path_dialog = filedialog.Directory(self.win)
         path = path_dialog.show()
         self.path_entry.insert(0, path)
