@@ -21,8 +21,7 @@ class MR(object):
             else:
                 new_name = filename.replace(old, new)
             os.rename(os.path.join(path, filename), os.path.join(path, new_name))
-        
-    
+           
     def btn_onclick(self):
         path = self.path_entry.get()
         old = self.pattern_entry.get()
@@ -37,9 +36,6 @@ class MR(object):
         path_dialog = filedialog.Directory(self.win)
         path = path_dialog.show()
         self.path_entry.insert(0, path)
-        # path_value.go()
-
-
 
     def create_widgets(self):
         Label(self.win, text='请输入文件路径:').grid(column=0, row=0, padx=5, pady=0)
@@ -62,9 +58,6 @@ class MR(object):
         self.target_entry.grid(column=1, row=2, padx=5, pady=0)
 
         self.btn = Button(self.win, text='修改', command=self.btn_onclick, width=10).grid(column=1, row=3, pady=20)
-        # self.btn.configure(width=30)
-
-
 
 
 if __name__ == '__main__':
