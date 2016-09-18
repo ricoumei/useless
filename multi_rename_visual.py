@@ -45,13 +45,13 @@ class MR(object):
         self.path_entry.insert(0, path)
 
     def create_widgets(self):
-        Label(self.win, text='请输入文件路径:').grid(column=0, row=0, padx=5, pady=0)
+        Label(self.win, text='请输入文件路径').grid(column=0, row=0, padx=5, pady=0)
         self.path_entry = Entry(self.win)
         self.path_entry.grid(column=1, row=0, padx=5, pady=0)
         Button(self.win, text='选择路径', command=self.select_path).grid(column=2, row=0)
         
         
-        Label(self.win, text='要修改的字符:').grid(column=0, row=1, padx=5, pady=0)
+        Label(self.win, text='要修改的字符').grid(column=0, row=1, padx=5, pady=0)
         self.pattern_entry = Entry(self.win)
         self.pattern_entry.grid(column=1, row=1, padx=5, pady=0)
         self.check_var = StringVar()
@@ -60,7 +60,7 @@ class MR(object):
         self.re_check.select()
         
         
-        Label(self.win, text='修改后的字符:').grid(column=0, row=2, padx=5, pady=0)
+        Label(self.win, text='修改后的字符').grid(column=0, row=2, padx=5, pady=0)
         self.target_entry = Entry(self.win)
         self.target_entry.grid(column=1, row=2, padx=5, pady=0)
 
