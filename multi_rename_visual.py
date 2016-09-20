@@ -31,7 +31,7 @@ class MR(object):
         old = self.pattern_entry.get()
         new = self.target_entry.get()
         try:
-            if path == '' or old == '' or new == '':
+            if path == '' or old == '':
                 raise Exception('信息填写不完整!')
             self.rename(path, old, new, check=self.check_var.get() == 'y')
             messagebox.showinfo(title='通知', message='修改成功!')
